@@ -1,25 +1,30 @@
-import logo from '../logo.svg';
 import '../Css/App.css';
+import '../Css/Body.css';
+import {useState} from 'react';
 
-function App() {
+function Body() {
+  const[address, setAddress] = useState('');
+
+  const handleChange = event => {
+    setAddress(event.target.value); 
+  }
+  const handleZillow = event => {
+    setAddress("button working");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Basic Home Info">
+      <div>
+        <p> Address</p>
+        <input 
+          class="Textbox" 
+          type="text"
+          state={address}
+          onChange={handleChange}></input>
+        <button onClick={handleZillow}>Search Zillow</button> 
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Body;
