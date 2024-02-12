@@ -14,8 +14,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    //adding a custom class to tailwind
     collapsableForm: [],
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 };
 export default config;
